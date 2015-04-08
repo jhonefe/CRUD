@@ -24,10 +24,11 @@
     <td><c:out value="${row.apellidos}"/></td>
     <td><c:out value="${row.direccion}"/></td>
     <td><c:out value="${row.telefono}"/></td>
-    <td><c:out value="${row.fecha_nac}"/></td>
+    
      </tr>
     </c:forEach>
     </table>
+    <a href="insertar.jsp">Registrar nuevo Alumno</a>
 
 
         
