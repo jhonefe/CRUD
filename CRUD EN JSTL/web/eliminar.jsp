@@ -1,6 +1,6 @@
 <%-- 
-    Document   : eliminar
-    Created on : 08-abr-2015, 1:42:35
+    Document   : eliminar.jsp
+    Created on : 08-abr-2015, 1:47:17
     Author     : jhonf
 --%>
 
