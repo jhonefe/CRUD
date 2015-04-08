@@ -5,6 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="x"uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="fmt"uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sql"uri="http://java.sun.com/jsp/jstl/sql" %>
+<sql:setDataSource var="bdatos" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/academica" user="root" password="udenar" />
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +18,18 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <c:if test="${param.id != null}">
+        <sql:update var="result" dataSource="${bdatos}">
+        Delete from estudiante where id=${param.id}
+        	
+        </sql:update>
+        
+        <c:if test="${result == 1}">
+        	<p>Registro eliminado satisfactoriamente</p>
+            <a href="index.jsp">Volver</a>
+            <a href="insertar.jsp">Nuevo registro</a>
+        </c:if>   
+        
+        </c:if>
     </body>
 </html>
